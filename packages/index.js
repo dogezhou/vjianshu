@@ -1,9 +1,10 @@
-import JButton from './button/index.js';
-import JTabs from './tabs/index.js';
+import Button from './button/index.js';
+import {Tabs, TabPane} from './tabs/index.js';
 
 const components = [
-  JButton,
-  JTabs
+  Button,
+  Tabs,
+  TabPane
 ]
 
 const install = function(Vue) {
