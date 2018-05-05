@@ -37,6 +37,16 @@
             &lt;/j-tab-pane&gt;
           &lt;/j-tabs&gt;          
         </pre>
+    </section>
+    <section>
+        <h2>Dialog 对话框</h2>
+        <j-modal v-if="showModal" @close="showModal = false" @confirm="handleConfirm">
+          <template slot="header">
+            加入黑名单
+          </template>
+          <p>确认将该用户加入黑名单吗？在你黑名单中的用户无法在你文章下评论，无法在其它评论中提到你，无法给你发送简信，自动从你的粉丝列表移除且无法再关注你。</p>
+        </j-modal>
+        <a class="modal" id="myModal" @click="showModal = true">加入黑名单</a>
     </section>    
   </div>
 </template>
@@ -46,7 +56,13 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      showModal: false
+    }
+  },
+  methods: {
+    handleConfirm() {
+      console.log('确定回调')
     }
   }
 }
